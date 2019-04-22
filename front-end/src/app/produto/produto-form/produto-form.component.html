@@ -1,0 +1,39 @@
+<mat-card-title>
+  {{ titulo }}
+</mat-card-title>
+
+<mat-card-content>
+
+  <form class="form-container">
+
+    <mat-form-field>
+      <mat-label>Nome</mat-label>
+      <input matInput placeholder="Informe o nome do produto" required
+      name="title" [(ngModel)]="produto.title">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Slug</mat-label>
+      <input matInput placeholder="Informe a slug do produto" required
+      name="slug" [(ngModel)]="produto.slug">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Descrição</mat-label>
+      <input matInput placeholder="Informe a descrição do produto" required
+      name="description" [(ngModel)]="produto.description">
+    </mat-form-field>
+    
+    <mat-form-field>
+      <mat-label>Preço</mat-label>
+      <span matPrefix>R$ &nbsp;</span>
+      <input matInput type="number" placeholder="Informe o preço do produto" required
+      name="price" [(ngModel)]="produto.price">
+    </mat-form-field>
+     
+  </form>
+</mat-card-content>
+<mat-card-actions class="center-buttons">
+  <button mat-flat-button color="primary" (click)="salvar()">Salvar</button>
+  <button mat-flat-button color="warn" (click)="cancelar()">Cancelar</button>
+</mat-card-actions>

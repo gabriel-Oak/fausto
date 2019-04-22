@@ -1,0 +1,52 @@
+<mat-card-title>
+  {{ titulo }}
+</mat-card-title>
+
+<mat-card-content>
+
+  <form class="form-container">
+
+    <mat-form-field>
+      <mat-label>País</mat-label>
+      <input matInput placeholder="Informe o nome do país" required
+      name="contry" [(ngModel)]="endereco.contry">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Estado</mat-label>
+      <input matInput placeholder="Informe o estado" required
+      name="contry" [(ngModel)]="endereco.state">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>CEP</mat-label>
+      <input matInput placeholder="Informe o codigo postal" required
+      name="postal" [(ngModel)]="endereco.postal">
+    </mat-form-field>
+    
+    <mat-form-field>
+      <mat-label>Rua</mat-label>
+      <input matInput placeholder="Informe a rua" required
+      name="street" [(ngModel)]="endereco.street">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Número</mat-label>
+      <input matInput placeholder="Informe o numero" required
+      name="number" [(ngModel)]="endereco.number">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Bairro</mat-label>
+      <input matInput placeholder="Informe o bairro" required
+      name="district" [(ngModel)]="endereco.district">
+    </mat-form-field>
+     
+     
+     
+  </form>
+</mat-card-content>
+<mat-card-actions class="center-buttons">
+  <button mat-flat-button color="primary" (click)="salvar()">Salvar</button>
+  <button mat-flat-button color="warn" (click)="excluir(endereco._id)">Excluir</button>
+</mat-card-actions>

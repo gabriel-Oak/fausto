@@ -1,0 +1,26 @@
+<mat-toolbar color="primary">
+  <span>{{ title }} </span> 
+  <button mat-icon-button [matMenuTriggerFor]="rootMenu">
+    Menu
+  </button>
+
+  <mat-menu #rootMenu="matMenu">
+    <button mat-menu-item [matMenuTriggerFor]="subMenu">Cadastro</button>
+  </mat-menu>
+  
+  <mat-menu #subMenu="matMenu">
+    <a mat-menu-item href="produto">Produto</a>
+    <a mat-menu-item href="loja">Loja</a>
+    <a mat-menu-item href="cliente/">Cliente</a>
+    <a mat-menu-item href="pedido/">Pedido</a>
+    <a mat-menu-item href="endereco/novo">Endereço</a>
+  </mat-menu>
+
+  
+</mat-toolbar>
+
+<div class="main-container">
+  <mat-card>
+    <router-outlet></router-outlet>
+  </mat-card>
+</div>

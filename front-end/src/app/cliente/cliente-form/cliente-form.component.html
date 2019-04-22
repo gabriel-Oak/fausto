@@ -1,0 +1,41 @@
+<mat-card-title>
+  {{ titulo }}
+</mat-card-title>
+
+<mat-card-content>
+
+  <form class="form-container">
+
+    <mat-form-field>
+      <mat-label>Nome</mat-label>
+      <input matInput placeholder="Informe o nome do cliente" required
+      name="nome" [(ngModel)]="cliente.nome">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input matInput placeholder="Informe o email do cliente" required
+      name="email" [(ngModel)]="cliente.email">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Senha</mat-label>
+      <input type="password" matInput placeholder="Informe a senha do cliente" required
+      name="senha" [(ngModel)]="cliente.password">
+    </mat-form-field>
+    
+  <mat-form-field>
+    <mat-label>Endereço</mat-label>
+    <mat-select placeholder="Selecione o endereço refetente a cliente" required name="endereco" [(ngModel)]="cliente.address">
+      <mat-option *ngFor="let endereco of enderecos" [value]="endereco._id">
+       CEP {{ endereco.postal }} Número {{ endereco.number }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+      
+  </form>
+</mat-card-content>
+<mat-card-actions class="center-buttons">
+  <button mat-flat-button color="primary" (click)="salvar()">Salvar</button>
+  <button mat-flat-button color="warn" (click)="cancelar()">Cancelar</button>
+</mat-card-actions>

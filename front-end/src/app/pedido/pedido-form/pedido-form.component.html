@@ -1,0 +1,48 @@
+<mat-card-title>
+    {{ titulo }}
+  </mat-card-title>
+  
+  <mat-card-content>
+  
+    <form class="form-container">
+  
+      <mat-form-field>
+        <mat-label>Número</mat-label>
+        <input matInput placeholder="Informe o numero do pedido" required
+        name="nome" [(ngModel)]="pedido.number">
+      </mat-form-field>
+      
+    <mat-form-field>
+      <mat-label>Cliente</mat-label>
+      <mat-select placeholder="Selecione o cliente refetente ao pedido" required name="cliente" [(ngModel)]="pedido.customer">
+        <mat-option *ngFor="let cliente of clientes" [value]="cliente._id">
+         {{ cliente.nome }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Loja</mat-label>
+        <mat-select placeholder="Selecione a loja referente ao pedido" required name="loja" [(ngModel)]="pedido.store">
+          <mat-option *ngFor="let loja of lojas" [value]="loja._id">
+           {{ loja.number }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
+          <mat-label>Item</mat-label>
+          <mat-select placeholder="Selecione o item referente ao pedido" required name="item" [(ngModel)]="pedido.store">
+            <mat-option *ngFor="let produto of produtos" [value]="produto._id">
+             {{ produto.title }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        
+    </form>
+  </mat-card-content>
+  <mat-card-actions class="center-buttons">
+    <button mat-flat-button color="primary" (click)="salvar()">Salvar</button>
+    <button mat-flat-button color="warn" (click)="cancelar()">Cancelar</button>
+  </mat-card-actions>
+  
